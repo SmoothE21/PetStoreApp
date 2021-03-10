@@ -1,0 +1,14 @@
+{
+  "name": "pet_api_query",
+  "version": "1.0.0",
+  "description": "This is meant to query the Pet API and return 2 files with specific information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "SmoothE",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
