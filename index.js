@@ -12,7 +12,7 @@ const apiURL = 'https://petstore.swagger.io/v2/pet/findByStatus?status=available
 
 fs.writeFile('availablePetList.txt', '', function (err) {
     if (err) throw err;
-    console.log('Created the file!');
+    console.log('Created the available pets file!');
 });
 
 fetch(apiURL)
@@ -37,16 +37,16 @@ const pendingURL = 'https://petstore.swagger.io/v2/pet/findByStatus?status=pendi
 
 fs.writeFile('pendingPetList.txt', '', function (err) {
     if (err) throw err;
-    console.log('Created the file!');
+    console.log('Created the pending pets file!');
 });
 
 fetch(pendingURL)
     .then(response => response.json())
     //.then(data => console.log(data))
     .then(data => data.forEach( element => 
-        fs.appendFile('availablePetList.txt', element['name'] + '\n', function (err) {
+        fs.appendFile('pendingPetList.txt', element['name'] + '\n', function (err) {
             if (err) throw err;
-            console.log('Added the names!');
+            //console.log('Added the names!');
         })
         )
     )
